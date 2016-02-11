@@ -1,0 +1,40 @@
+﻿<Window x:Class="XChatGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XChatGUI"
+        mc:Ignorable="d"
+        Title="XChat" Height="521" Width="635" Background="#FF2D2D30" Foreground="White" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Xijezu.ico" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Send Message" HorizontalAlignment="Left" Margin="504,455,0,0" VerticalAlignment="Top" Width="104" Height="20" Background="#FF2D2D30" Foreground="#FFF1F1F1" Click="button_Click"/>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="393" Margin="10,10,0,0" VerticalAlignment="Top" Width="598" Background="#FF252526" Foreground="White" IsReadOnlyCaretVisible="True">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Usage: Use"/>
+                    <Run Text=" "/>
+                    <Run Text="&quot;"/>
+                    <Run Text="/connect account password"/>
+                    <Run Text="&quot;"/>
+                    <Run Text=" to connect to a server"/>
+                    <Run Text="."/>
+                    <LineBreak/>
+                    <Run Text="Use "/>
+                    <Run Text="&quot;"/>
+                    <Run Text="/disconnect"/>
+                    <Run Text="&quot;"/>
+                    <Run Text=" to disconnect from "/>
+                    <Run Text="a"/>
+                    <Run Text=" server."/>
+                    <LineBreak/>
+                    <Run/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="42" Margin="10,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="598" Background="#FF252526" Foreground="White" KeyUp="textBox_KeyUp"/>
+    </Grid>
+</Window>
