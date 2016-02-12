@@ -4,6 +4,8 @@ A simple clientless chat emulator for Rappelz.
 - Networking class taken and adapted from the **Rappelz: Endless Odyssey** project by **NCarbon**.
 - Special thanks to [glandu2](https://github.com/glandu2) & his **rzauth** to get an understanding about the Login encryption
 
+[![Example](http://i.xijezu.com/InLgg.jpg)](http://i.xijezu.com/OC1gw.webm)
+
 # How to use
 First of all, do not take this project as a real program, because it isn't.
 It was initially created for myself to get into the game without having to run the client, because I can't run Rappelz when I'm in University, that'd be a bit odd (also, my resolution on my Netbook sucks, so I wasn't able to get Rappelz displayed in window mode properly).
