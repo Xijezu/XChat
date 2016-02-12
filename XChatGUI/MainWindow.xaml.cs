@@ -26,7 +26,7 @@ namespace XChatGUI {
                     if ( pLogin.Length != 3 )
                         return;
                     m_iClientEmulator = new XChat.XClientEmulator();
-                    m_iClientEmulator.EmulateClient( pLogin[1], pLogin[2], "5.230.147.100" );
+                    m_iClientEmulator.EmulateClient( pLogin[1], pLogin[2]);
                 }
             }else if ( szMsg.Equals( "/disconnect" ) ) {
                 m_iClientEmulator.StopClient();
