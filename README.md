@@ -2,7 +2,7 @@
 A simple clientless chat emulator for Rappelz.
 
 -> Networking class taken and adapted from the **Rappelz: Endless Odyssey** project by **NCarbon**.
--> Special thanks to **glandu2** & his **rzauth** to get an understanding about the Login encryption
+-> Special thanks to [glandu2](https://github.com/glandu2) & his **rzauth** to get an understanding about the Login encryption
 
 # How to use
 First of all, do not take this project as a real program, because it isn't.
@@ -14,7 +14,7 @@ I based the project on C# for 2 reasons:
 - Most people which are able to code are able to understand C#
 - I needed a GUI. And what's the quickest way to create an UI? Guess what.
 
-tl;dr:
+**tl;dr:**
 Use this project to get an understanding about the networking of Rappelz.
 
 Kind Regards,
