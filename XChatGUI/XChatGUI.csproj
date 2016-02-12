@@ -53,7 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ManagedOpenSsl">
-      <HintPath>.\ManagedOpenSsl.dll</HintPath>
+      <HintPath>..\XChat\ManagedOpenSsl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -75,10 +75,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ClientEmulator\XClientAuthEmulator.cs" />
-    <Compile Include="ClientEmulator\XClientGameEmulator.cs" />
     <Compile Include="ConnectionTag.cs" />
-    <Compile Include="ClientEmulator\XChatEmulator.cs" />
+    <Compile Include="XChatEmulator.cs" />
     <Compile Include="XLog.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

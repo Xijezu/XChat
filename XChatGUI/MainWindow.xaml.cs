@@ -21,15 +21,15 @@ namespace XChatGUI {
         private void button_Click(object sender, RoutedEventArgs e) {
             string szMsg = textBox.Text;
             if ( szMsg.StartsWith( "/connect" ) ) {
-                if(m_iClientEmulator == null ) {
+                if(m_iClientEmulator == null || !m_iClientEmulator.IsConnected) {
                     var pLogin = szMsg.Split( ' ' );
                     if ( pLogin.Length != 3 )
                         return;
                     m_iClientEmulator = new XChat.XClientEmulator();
-                    m_iClientEmulator.EmulateClient( pLogin[1], pLogin[2], "5.230.147.100" );
+                    m_iClientEmulator.EmulateClient( pLogin[1], pLogin[2] );
                 }
             }else if ( szMsg.Equals( "/disconnect" ) ) {
-                m_iClientEmulator.StopClient();
+                m_iClientEmulator.CreateLogoutPacket();
             }else if ( szMsg.StartsWith( "/select" ) ) {
                 string[] pSelection;
                 if((pSelection = szMsg.Split(' ')).Length == 2 ) {
@@ -37,7 +37,9 @@ namespace XChatGUI {
                     if(!int.TryParse(pSelection[1], out nCode)) {
                         return;
                     }
-                    m_iClientEmulator.OnServerSelect( nCode );
+                    m_iClientEmulator.CreateServerSelectPacket( nCode );
+                    System.Threading.Thread.Sleep(200);
+                    XChat.XLog.Log("Connecting to game server...");
                 }
             }else if ( szMsg.StartsWith( "/use" ) ) {
                 string[] pSelection;
@@ -46,7 +48,7 @@ namespace XChatGUI {
                     if ( !int.TryParse( pSelection[1], out nCode ) ) {
                         return;
                     }
-                    m_iClientEmulator.OnGameLogin( nCode );
+                    m_iClientEmulator.CreateLoginPacket( nCode );
                 }
             }
             else {
@@ -186,8 +188,7 @@ namespace XChatGUI {
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if ( m_iClientEmulator != null ) m_iClientEmulator.StopClient();
-            if ( Rappelz.XLog.tw != null ) Rappelz.XLog.tw.Close();
+            m_iClientEmulator.CreateLogoutPacket();
         }
     }
 }

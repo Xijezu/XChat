@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rappelz
+namespace XChat
 {
     class XLog
     {
@@ -15,17 +15,10 @@ namespace Rappelz
 
         static public void Log(string format, params object[] obj)
         {
-            Log(string.Format( format, obj ));
-        }
-
-        static public void Debug(string message) {
-            tw.WriteLine( message );
-            Console.WriteLine( message );
-            XChatGUI.MainWindow.WindowInstance.AddMessage( null, message, -3 );
-        }
-
-        static public void Debug(string format, params object[] obj) {
-            Debug( string.Format( format, obj ) );
+            string message = string.Format( format, obj );
+            tw.WriteLine(message);
+            Console.WriteLine(message);
+            XChatGUI.MainWindow.WindowInstance.AddMessage( null, message, -1 );
         }
 
         static public void AddMessage(string szSource, string szMsg, int nType) {
